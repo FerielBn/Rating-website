@@ -1,0 +1,41 @@
+<div class="filters">
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select panelClass="sort-select" [(ngModel)]="sort">
+            <mat-option value="comedy">Comedy</mat-option>
+            <mat-option value="fiction">Fiction</mat-option>
+            <mat-option value="mystery">Mystery</mat-option>
+            <mat-option value="romance">Romance</mat-option>
+            <mat-option value="thrill">Thrill</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+
+<div class="movies" *ngIf="movies"> 
+<ng-container *ngFor="let movie of movies">
+    <div class="movie" (click)="openMovieDetails(movie.Title)">
+    
+        <div class="movie-thumb-container">
+            <img *ngIf="movie.Poster"
+              src="{{ movie.Poster }}"
+              alt="thumbnail"
+              class="movie-thumbnail"
+            />
+            <p *ngIf="!movie.background_image">No image</p>
+        </div>
+
+        <div class="movie-description">
+            <p class="movie-name">{{ movie.Title }}</p>
+            <div class="movie-platforms">
+              <img *ngFor="let moviePlatform of movie.parent_platforms"            
+                class="movie-platform"
+                src="assets/images/platforms/{{ moviePlatform.platform.slug }}.svg"
+                alt="{{ moviePlatform.platform.slug }}"
+              />
+            </div>
+        </div>
+
+    </div>
+</ng-container>
+</div>
