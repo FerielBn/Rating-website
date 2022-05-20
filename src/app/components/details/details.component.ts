@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
 
   movieTitle: string;
   routeSub: Subscription;
-  gameSub: Subscription;
+  movieSub: Subscription;
   movie: any;
 
   constructor( private activatedRoute : ActivatedRoute,
@@ -20,13 +20,13 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      this.movieTitle = params['title'];
+      this.movieTitle = params['title']
       this.getMovieDetails(this.movieTitle);
     });
   }
 
   getMovieDetails(title: string): void {
-    this.gameSub = this.httpService
+    this.movieSub = this.httpService
       .getMovieDetails(title)
       .subscribe((res: any) => {
         this.movie = res;
@@ -37,3 +37,4 @@ export class DetailsComponent implements OnInit {
     }
 
 }
+;

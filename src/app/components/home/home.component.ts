@@ -17,9 +17,11 @@ export class HomeComponent implements OnInit {
      private router: Router,) { }
 
   ngOnInit(): void {
-    fetch('https://www.omdbapi.com/?apikey=3b4857ea')
-     .then(res => res.json())
-      .then(res => this.movies = res.Search);
+    //fetch('https://streaming-availability.p.rapidapi.com/get/basic')
+     //.then(res => res.json())
+     // .then(res => this.movies = res)
+     // .then(res => console.log("on init : "+res));
+      
 
    this.activatedRoute.params.subscribe((params: Params) => {
      if (params['movie-search']) {
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
   searchMovie(search?: string){
     this.httpserv.getMovies(search).subscribe((response: any) => {
       this.movies = response.Search;
-      console.log("RESPONSE : "+response);
+      console.log("search movie : "+response);
     })
     
    // fetch('https://www.omdbapi.com/?s='+search+'&apikey=3b4857ea')

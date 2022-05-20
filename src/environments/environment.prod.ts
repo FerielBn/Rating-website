@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  BASE_URL: 'https://omdbapi.com/?s=${searchTerm}&page=1&apikey=fc1fef96'
+  BASE_URL: 'https://streaming-availability.p.rapidapi.com/'
 };

@@ -19,21 +19,21 @@ export class HttpService {
       let params = new HttpParams().set('search', search);
     }
 
-    return this.http.get<any>('https://www.omdbapi.com/?s='+search+'&apikey=3b4857ea' , {
+    return this.http.get<any>('https://streaming-availability.p.rapidapi.com/get/basic' , {
      params: params,
-    } 
+    }   
     );
   }
 
   getMovieDetails(title: string): any {
-    const gameInfoRequest = this.http.get<any>('https://www.omdbapi.com/?s='+title+'&apikey=3b4857ea');
+    const movieInfoRequest = this.http.get<any>('https://streaming-availability.p.rapidapi.com/'+title+'/basic');
 
     return forkJoin({
-      gameInfoRequest,
+      movieInfoRequest,
     }).pipe(
       map((resp: any) => {
         return {
-          ...resp['gameInfoRequest'],
+          ...resp['movieInfoRequest'],
         };
       })
     );
