@@ -1,0 +1,122 @@
+.filters{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding-left: 20px;
+
+}
+
+::ng-deep{
+    .mat-form-field-infix{
+        border-top: none;
+        font-size: medium;
+
+    }
+
+    .mat-form-field {
+        width: 330px;
+        margin-left: 0;
+
+    }
+
+    .mat-select-value{
+        padding: 3px 20px;
+    }
+
+    .mat-select-value,
+    .mat-select-arrow,
+    .mat-form-field-hide-placeholder, .mat-select-placeholder,
+    .mat-form-field-apperance-legacy, .mat-form-field-label{
+        color: #fff;
+        opacity: 1;
+    }
+
+    .mat-form-field-apperance-legacy, .mat-form-field-label{
+        padding-left: 5px;
+    }
+
+    .mat-form-field-apperance-legacy, .mat-form-field-underline{
+        background-color: #fff;
+    }
+
+    .mat-selected:not(.mat-option-disabled), .mat-select-arrow{
+      color: var(--accent)!important;
+    }
+
+}
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1500px;
+    padding: 30px 50px;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+.movie {
+    width: 280px;
+    margin: 10px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #202020;
+    box-shadow: 4px 3px 8px 0px rgba(12.55, 12.55, 12.55);
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 4px 3px 11px 6px rgba(105, 240, 174 , 0.4);
+      transform: translateY(-3px);
+    }
+
+    &-thumb-container {
+      background-color: #000;
+      position: relative;
+      height: 266px;
+      color: #fff;
+      text-align: center;
+    }
+
+    &-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      height: 266px;
+    }
+
+    &-description {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      // height: 157px;
+    }
+
+    &-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &-platforms {
+      display: flex;
+    }
+
+    &-platform {
+      width: 20px;
+      margin-right: 10px;
+    }
+  }

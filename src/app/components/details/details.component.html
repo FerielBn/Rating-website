@@ -1,0 +1,46 @@
+<div class="details" *ngIf="movie">
+  <div class="movie-banner">
+    <img class="movie-banner-img" src="{{movie.Poster}}" alt="background image" />
+  </div>
+
+  <div class="movie-gauge">
+    <mwl-gauge class="two" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="movieRating" [animated]="true"
+      [color]="getColor" [animationDuration]="2">
+    </mwl-gauge>
+    <div class="movie-gauge-label">MetaScore</div>
+  </div>
+
+  <div class="movie-content">
+    <div class="details-wrapper">
+      <div class="movie-header">
+        <h1 class="movie-header-title">{{movie.Title}}</h1>
+        <h2 class="movie-header-release-date">Released {{movie.Released}}</h2>
+        <p class="movie-header-genres">{{movie.Genre}}</p>
+
+
+      </div>
+
+      <div class="movie-description">
+        <div class="label"><b>Description</b>
+          <p>{{movie.Plot}}</p>
+        </div>
+        <div class="label"><b>Director</b>
+          <p>{{movie.Director}}</p>
+        </div>
+        <div class="label"><b>Writer</b>
+          <p>{{movie.Writer}}</p>
+        </div>
+        <div class="label"><b>Actors</b>
+          <p>{{movie.Actors}}</p>
+        </div>
+        <div class="label"><b>Runtime</b>
+          <p>{{movie.Runtime}}</p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

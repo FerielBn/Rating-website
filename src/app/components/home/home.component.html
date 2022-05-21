@@ -1,0 +1,46 @@
+
+<div class="filters">
+  <mat-form-field>
+    <mat-label>Sort</mat-label>
+    <mat-select panelClass="sort-select" [(ngModel)]="sort" (selectionChange)="SortMovie(sort)">
+      <mat-option value="comedy">Comedy</mat-option>
+      <mat-option value="fiction">Fiction</mat-option>
+      <mat-option value="mystery">Mystery</mat-option>
+      <mat-option value="romance">Romance</mat-option>
+      <mat-option value="thrill">Thrill</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div class="movies " *ngIf="homePageMovies && movies.length ==0">
+  <ng-container *ngFor="let movie of homePageMovies">
+    <div class="movie animate__animated animate__fadeInDown" (click)="openMovieDetails(movie.imdbID)">
+
+      <div class="movie-thumb-container">
+        <img *ngIf="movie.Poster" src="{{ movie.Poster }}" alt="thumbnail" class="movie-thumbnail" />
+        <p *ngIf="!movie.Poster">No image</p>
+      </div>
+
+      <div class="movie-description">
+        <p class="movie-name">{{ movie.Title }}</p>
+      </div>
+
+    </div>
+  </ng-container>
+</div>
+
+<div class="movies" *ngIf="movies">
+  <ng-container *ngFor="let movie of movies">
+    <div class="movie animate__animated animate__fadeInDown" (click)="openMovieDetails(movie.imdbID)">
+
+      <div class="movie-thumb-container">
+        <img *ngIf="movie.Poster" src="{{ movie.Poster }}" alt="thumbnail" class="movie-thumbnail" />
+        <p *ngIf="!movie.background_image">No image</p>
+      </div>
+      <div class="movie-description">
+        <p class="movie-name">{{ movie.Title }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
